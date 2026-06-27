@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "README"
             }
           }
         ]
@@ -226,6 +226,7 @@
   },
   "active": "78839b5574f8f853",
   "lastOpenFiles": [
+    "README.md",
     "index.md",
     "assets/Pasted image 20260627130737.png",
     "assets/Pasted image 20260627130702.png",
