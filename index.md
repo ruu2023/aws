@@ -199,3 +199,23 @@
 ## 過程で複数のインスタンス間での通信が頻繁に行われます。このEC2インスタンスを用いた作業の効率化が求められています。
 - 「インスタンス間通信が多い」というキーワードが出たらクラスタープレイスメントグループを思い出すと良いです。
 - クラスタープレイスメントグループを設定した上で、M5インスタンス群を起動する。
+
+
+**Savings Plansの種類は3つ**あり、その1つがEC2 Instance Savings Plans。
+- **Compute Savings Plans** — 最も柔軟。インスタンスファミリー・リージョン・OS・テナンシー問わず適用。Fargate、Lambdaにも適用。割引率は最大66%。
+- **EC2 Instance Savings Plans** — 特定リージョンの**特定インスタンスファミリー**にコミット。柔軟性は下がるが割引率が高い（最大72%）。
+- **SageMaker Savings Plans** — SageMaker向け。
+
+
+- secret manager は自動ローテーション対応
+- 読み取りはレプリカ！作業量が要件でなければマルチAZのAuroraレプリカが最適
+- lamdaは15分以内の処理だけ！
+- サードパーティの証明書は基本手動
+- Aのキーポリシー、Aのバケットポリシー、BのインスタンスIAMロール
+- controll tower のデータレジデンシーガードレールでリージョン制限できる
+- 最強はinstance saving(インスタンス指定ガチガチで72%)
+- fargate lamda 節約ならcompute saving 年間コミット　
+- S3 (PutObject) → EventBridge (ルール) → Step Functions (ステートマシン起動)
+- AWSSysteManager=SSM そのなかの SessionManager.を使うことが踏み台が割の推奨
+- pull 型ならSQS一択、注意すべきは何時間おきに取得するか書いてあるかだけ
+- サードパーティならssm run command
