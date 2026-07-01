@@ -32,3 +32,6 @@ def send_bulk_notification(user_ids, message):
     # 小さな改修3 (旧構造に適応): 一括通知機能 (by Carol)
     for uid in user_ids:
         send_notification(uid, message)
+
+
+## 大きい変更
