@@ -35,3 +35,5 @@ def send_bulk_notification(user_ids, message):
 
 
 ## 大きい変更
+
+## 小さな変更
