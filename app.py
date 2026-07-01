@@ -12,5 +12,9 @@ def delete_user(user_id):
 def process_order(order_id, amount):
     return {"order_id": order_id, "amount": amount, "status": "pending"}
 
+def cancel_order(order_id):
+    # 小さな改修2 (旧構造に適応): 注文キャンセル機能 (by Bob)
+    return {"order_id": order_id, "status": "cancelled"}
+
 def send_notification(user_id, message):
     print(f"Notify {user_id}: {message}")
