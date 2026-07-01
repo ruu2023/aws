@@ -18,3 +18,8 @@ def cancel_order(order_id):
 
 def send_notification(user_id, message):
     print(f"Notify {user_id}: {message}")
+
+def send_bulk_notification(user_ids, message):
+    # 小さな改修3 (旧構造に適応): 一括通知機能 (by Carol)
+    for uid in user_ids:
+        send_notification(uid, message)
